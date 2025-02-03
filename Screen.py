@@ -129,7 +129,7 @@ class Screen:
                                         # print(self.board.blackplayer.status.name)
                                         # print(self.board.whiteplayer.status.name)
                                         if self.board.getCurrentPlayer.status==Status.CHECKMATE:
-                                            self.gameOver=True
+                                            self.gameOver=False
                                         break
                                         # print(vars(board))
                                     except IllegalMoveException:
@@ -139,8 +139,8 @@ class Screen:
                         self.highlight=[]
                 else:
                     start=time.time()
-                    bestValue,bestMove=minimax(self.board,2,0,float('-inf'),float('inf'))    
-                    print(time.time()-start) 
+                    bestValue,bestMove=minimax(self.board,2,0,float('-inf'),float('inf'))
+                    print(time.time()-start)
                     self.board=self.board.builder(bestMove)
                     self.boards.append(self.board)
             elif self.gameOver:
