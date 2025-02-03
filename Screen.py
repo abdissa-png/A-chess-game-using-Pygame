@@ -129,7 +129,7 @@ class Screen:
                                         # print(self.board.blackplayer.status.name)
                                         # print(self.board.whiteplayer.status.name)
                                         if self.board.getCurrentPlayer.status==Status.CHECKMATE:
-                                            self.gameOver=False
+                                            self.gameOver=false
                                         break
                                         # print(vars(board))
                                     except IllegalMoveException:
